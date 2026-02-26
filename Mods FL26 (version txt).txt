@@ -1,0 +1,186 @@
+1.	Menu Graphics (Menu Principal/Main Menu)
+
+
+Real Madrid :
+https://www.pesmodding.com/2025/10/graphic-menu-real-madrid-25-26-pes-2021.html
+
+PSG :
+https://www.pesmodding.com/2025/10/graphic-menu-psg-x-jordan-wings-pes.html
+
+
+
+(Crédits : EFER.Q, Kainosk)
+
+
+
+
+
+
+
+2.	Logo Pack
+
+
+https://modsfire.com/4917p7tl46FaxKb
+
+cpk.root = ".\livecpk\Logos_FL26"
+
+(Crédits : RezvFX, YosfX, NFS_FM)
+
+
+
+
+
+
+3.	Menu Server
+
+
+https://modsfire.com/CMe7UkFDt1SoD34
+
+cpk.root = ".\livecpk\healthArrow"
+cpk.root = ".\livecpk\Menu"
+lua.module = "MenuServer.lua"
+
+(Crédits : Jemp, RezvFX)
+
+
+
+
+
+
+
+4.	Gameplay Mod
+
+
+evoweb.uk/attachments/f4l_rgp_v5-1-rar.344190/
+
+
+Lien alternatif :
+https://modsfire.com/a2gF4O4LMyiFKC2
+
+
+cpk.root = ".\livecpk\F4L_REALISTIC_GAMEPLAY"
+
+
+(Crédits : Football4Life)
+
+
+
+
+
+
+5.	Scoreboards Server
+
+
+Part 1 : https://modsfire.com/5nVce82Sd088NYB
+Part 2 : https://modsfire.com/wqyKAF6JReCty2M
+Part 3 : https://modsfire.com/rc20TjJLLQhn8DI
+
+
+lua.module = "scoreboard-hexx.lua"
+
+
+
+
+
+6.	Adboards
+
+
+https://www.pesmodding.com/search/label/PES%202021%20Adboards
+
+cpk.root = ".\livecpk\Adboard"
+
+
+
+
+
+
+
+7.	BallServer
+
+
+https://www.pesmodding.com/2025/08/pes-2021-ballserver-pack-volume-56-aio.html
+
+
+Lien alternatif :
+Part 1 : https://modsfire.com/D03Co4oPhEaa989
+Part 2 : https://modsfire.com/8yx7rT459cr7Ao0
+
+lua.module = "BallServer.lua"
+
+(Crédits : zlac)
+
+backup: lua.module = "common\omb.lua"
+
+
+
+
+
+8.	Goalnets 25-26
+
+
+https://www.pesmodding.com/2025/10/goalnets-for-fl25-fl26-and-pes-21.html
+
+cpk.root = ".\livecpk\goalnets_25-26"
+lua.module = "goalnets\goalnets_25-26.lua"
+
+(Crédits : RezvFX, Okranza)
+
+
+
+
+
+
+
+9.	Entrance Server
+
+
+Part 1 : https://modsfire.com/ia57iXjkNsBeYy5
+Part 2 : https://modsfire.com/1vQ8XG5Lbw0Q5kb
+Part 3 : https://modsfire.com/E2RW90G05P8V2O4
+
+lua.module = "Entrance_fix.lua"
+lua.module = "Entrance.lua"
+
+(Crédits : Balkan PES BOX, MeroMero_08)
+
+
+
+
+
+
+
+10.	Tournament & Teams Anthems
+
+
+https://modsfire.com/iN6575ipsMhuERe
+
+lua.module = "tournament_anth_tunnel.lua"
+lua.module = "tunnel.lua"
+
+(Crédits : Predator002)
+
+
+
+
+
+
+11.	Chants Server
+
+
+https://modsfire.com/Ur1cf3AwIu0pJ3g
+
+
+cpk.root = ".\livecpk\Chants"
+
+
+
+
+
+
+12.	Goal Song Server
+
+
+https://modsfire.com/vtpdO93lI4x0899
+
+cpk.root = ".\livecpk\Goal Sound"
+lua.module = "GoalSongServer.lua"

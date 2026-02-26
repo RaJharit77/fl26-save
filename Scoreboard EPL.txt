@@ -1,0 +1,38 @@
+Scoreboard
+https://mega.nz/file/VrpjEbxA#Hmu6uleBYU6WG73fYAvQsYDBlb39qICQHzOTnpPnmhU
+
+
+17,	England\Afandix Premier League
+
+
+lua.module = "scoreboard-hexx.lua"
+
+(Crédits : Afandix)
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
+Affandix EPL Scoreboard Updated Colours
+https://modsfire.com/zeidcbv9gfRrqwA
+
+(Crédits : Afandix)
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
+
+
+EPL Font
+https://modsfire.com/y3PsWvpYE16DHoV
+
+cpk.root = ".\livecpk\EPL Font"
+
+(Crédits : SiuMing)
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
+
+EPL Emblem
+https://modsfire.com/PV0zGmI9749aN03
+
+cpk.root = ".\livecpk\EPL Emblem"
+
+Louis II: https://modsfire.com/download/1aRspL5EVaDxLnH/d71a0
