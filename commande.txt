@@ -1,0 +1,9 @@
+# 1. Installe l'outil d'interface graphique
+sudo apt update && sudo apt install yad -y
+
+# 2. Crée un fichier settings.dat vide pour éviter l'erreur de lecture
+cd ~/disque_d/FL_2026
+touch settings.dat
+
+# 3. Relance le script
+bash Settings-Linux.sh
