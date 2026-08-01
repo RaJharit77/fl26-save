@@ -29,7 +29,7 @@ local comp_both_teams_songs = {
 		105,	-- ICC
 		106,	-- ICC
 		107,	-- ICC
-	}
+}
 
 local curr_home_score = 0
 local curr_away_score = 0
@@ -53,64 +53,64 @@ local delta = 0
 local frame_count = 0
 
 local function tableLength(T)
-    local count = 0
-    for _ in pairs(T) do
-        count = count + 1
-    end
-    return count
+	local count = 0
+	for _ in pairs(T) do
+		count = count + 1
+	end
+	return count
 end
 
 local function tableInvert(T) -- swaps keys with values
    local s={}
    for k,v in pairs(T) do
      s[v]=k
-   end
-   return s
+	end
+	return s
 end
 
 local function table_copy(t)
-    local new_t = {}
+	local new_t = {}
     for k,v in pairs(t) do
-        new_t[k] = v
-    end
-    return new_t
+		new_t[k] = v
+	end
+	return new_t
 end
 
 local function rot_left(k, v, cv)
-    for i, val in pairs(table_copy(v)) do
-        if v[1] ~= cv then
-            -- keep rotating to the left, until current value is reached
+	for i, val in pairs(table_copy(v)) do
+		if v[1] ~= cv then
+			-- keep rotating to the left, until current value is reached
             table.insert( v, tableLength(v), table.remove( v, 1 ) )
-        else
-            break
-        end
-    end
-    -- then rotate once more, to reach next value
+		else
+			break
+		end
+	end
+	-- then rotate once more, to reach next value
     table.insert( v, tableLength(v), table.remove( v, 1 ) )
-    return v[1], k[v[1]]
+	return v[1], k[v[1]]
 end
 
 local function rot_right(k, v, cv)
-    for i, val in pairs(table_copy(v)) do
-        if v[1] ~= cv then
-            -- keep rotating to the right, until current value is reached
+	for i, val in pairs(table_copy(v)) do
+		if v[1] ~= cv then
+			-- keep rotating to the right, until current value is reached
             table.insert( v, 1, table.remove( v, tableLength(v) ) )
-        else
-            break
-        end
-    end
-    -- then rotate once more, to reach previous value
+		else
+			break
+		end
+	end
+	-- then rotate once more, to reach previous value
     table.insert( v, 1, table.remove( v, tableLength(v) ) )
-    return v[1], k[v[1]]
+	return v[1], k[v[1]]
 end
 
 local overlay_curr = 1
 local overlay_states = {
 	{ ui = "Master volume: %0.3f", prop = "master_volume", decr = -0.01, incr = 0.01, min = 0, max = 1  },
     { ui = "Stop on replays: %s", prop = "stop_on_replays", vals = {"On", "Off"}, keys = {["On"] = 1, ["Off"] = 0},
-        nextf = rot_left,
-        prevf = rot_right,
-    },
+		nextf = rot_left,
+		prevf = rot_right,
+	},
 }
 local ui_lines = {}
 
@@ -119,19 +119,19 @@ local ui_lines = {}
 -- misc #2
 -- remove trailing and leading whitespace from string
 local function trim(s)
-  return s:gsub("^%s*(.-)%s*$", "%1")
+	return s:gsub("^%s*(.-)%s*$", "%1")
 end
 
 local function get_common_lib(ctx)
-    return ctx.common_lib or _empty
+	return ctx.common_lib or _empty
 end
 
 local function file_exists(filename)
-    local f = io.open(filename)
-    if f then
-        f:close()
-        return true
-    end
+	local f = io.open(filename)
+	if f then
+		f:close()
+		return true
+	end
 end
 
 local function nil2str(value)
@@ -143,58 +143,58 @@ local function nil2str(value)
 end
 
 local function split(s, inSplitPattern)
-   local outResults = {}
-   -- chop off the trailing comment, if present
+	local outResults = {}
+	-- chop off the trailing comment, if present
    local theCommentStart = string.find( s, "#", 1 )
-   local data = s
-   if theCommentStart ~= nil then
+	local data = s
+	if theCommentStart ~= nil then
       data = string.sub(s, 1, theCommentStart-1)
-   end
+	end
 
-   -- now do the splits by main separator (inSplitPattern)
-   local theStart = 1
+	-- now do the splits by main separator (inSplitPattern)
+	local theStart = 1
    local theSplitStart, theSplitEnd = string.find( data, inSplitPattern, theStart )
-   while theSplitStart do
+	while theSplitStart do
       outResults[#outResults+1] = trim(string.sub( data, theStart, theSplitStart-1 ))
-      theStart = theSplitEnd + 1
+		theStart = theSplitEnd + 1
       theSplitStart, theSplitEnd = string.find( data, inSplitPattern, theStart )
-   end
+	end
    outResults[#outResults+1] = trim(string.sub( data, theStart ))
-   return outResults
+	return outResults
 end
 
 local function clear_table(t)
     for k,v in pairs(t) do
         t[k]=nil
-    end
+	end
 end
 
 local function file_exists(name)
 	local f=io.open(name,"r")
 	if f~=nil then 
-		io.close(f) 
-		return true 
-	else 
-		return false 
+		io.close(f)
+		return true
+	else
+		return false
 	end
 end
 
 local function load_map_txt(filename)
-    local delim = ","
-    local data = assert(io.lines(gsroot .. "\\" .. filename))
-    log(filename .. " found in " .. gsroot)
+	local delim = ","
+	local data = assert(io.lines(gsroot .. "\\" .. filename))
+	log(filename .. " found in " .. gsroot)
 
-    if filename == "map_teams.txt" then
+	if filename == "map_teams.txt" then
 		log("clear map_team")
-        clear_table(team_assignment_map)
-    end
-	
+		clear_table(team_assignment_map)
+	end
+
 	if filename == "map_competitions.txt" then
 		log("clear map comp")
-        clear_table(competition_assignment_map)
-    end
+		clear_table(competition_assignment_map)
+	end
 
-    for line in data do
+	for line in data do
 		line = trim(string.gsub(line, "^\239\187\191", "")) -- removes UTF BOM bytes at the beginning of the first line in .txt file and leading/trailing whitespaces in every line
 		local fields = split(line, delim)
 		if #fields > 1 then
@@ -211,7 +211,7 @@ local function load_map_txt(filename)
 					end
 					log(string.format(" ==> %s goalsong assignment (team)::   %s: %s, volume correction: %s", filename, fields[1], fields[2], fields[3]))
 				end
-				
+
 				if filename == "map_competitions.txt" and fields[2] ~= nil and fields[3] ~= nil and fields[4] ~= nil then
 					fields[3] = math.min(math.max(-1, tonumber(fields[3]) or 0), 1) -- clamp to -1 <= x <= 1 interval or default with 0
 					if competition_assignment_map[tonumber(fields[1])] ~= nil then
@@ -223,36 +223,36 @@ local function load_map_txt(filename)
 				end
 			end
 		end
-    end
+	end
 end
 
 local function has_value(tab, val)
-    for index, value in pairs(tab) do
-        if value == val then
-            return true
-        end
-    end
-    return false
+	for index, value in pairs(tab) do
+		if value == val then
+			return true
+		end
+	end
+	return false
 end
 
 local function dump_table(o)
-   if type(o) == 'table' then
-      local s = '{ '
+	if type(o) == 'table' then
+		local s = '{ '
       for k,v in pairs(o) do
          if type(k) ~= 'number' then k = '"'..k..'"' end
          s = s .. '['..k..'] = ' .. dump_table(v) .. ','
-      end
-      return s .. '} '
-   else
-      return tostring(o)
-   end
+		end
+		return s .. '} '
+	else
+		return tostring(o)
+	end
 end
 -- end misc #2
 
 
 -- .ini file
 local function load_ini(filename)
-    local t = {}
+	local t = {}
 	local data = assert(io.lines(gsroot .. "\\" .. filename))
 	log(filename .. " found in " .. gsroot)
 
@@ -268,22 +268,22 @@ local function load_ini(filename)
 end
 
 local function save_ini(filename)
-    local f = io.open(gsroot .. "\\" .. filename, "wt")
-    f:write(string.format("# GoalSongServer settings. Generated by GoalSongServer.lua\n"))
-    f:write("\n")
-    local keys = {}
+	local f = io.open(gsroot .. "\\" .. filename, "wt")
+	f:write(string.format("# GoalSongServer settings. Generated by GoalSongServer.lua\n"))
+	f:write("\n")
+	local keys = {}
     for name,value in pairs(settings) do
 		if name ~= 'corrected_volume' and name ~= 'volume_correction' then -- don't save 'corrected_volume' or 'volume_correction'
 			keys[#keys + 1] = name
 		end
-    end
-    table.sort(keys)
+	end
+	table.sort(keys)
     for i,name in ipairs(keys) do
-        local value = settings[name]
-        f:write(string.format("%s = %s\n", name, value))
-    end
-    f:write("\n")
-    f:close()
+		local value = settings[name]
+		f:write(string.format("%s = %s\n", name, value))
+	end
+	f:write("\n")
+	f:close()
 end
 -- end .ini file
 
@@ -298,7 +298,7 @@ end
 local function process_matchstats(ctx, filename)
 	local stats = match.stats()
 	if stats then
-		if stats.home_score > curr_home_score then 
+		if stats.home_score > curr_home_score then
 			curr_home_score = curr_home_score + 1
 			who_scored = "home team"
 			score_changed = true
@@ -309,18 +309,18 @@ local function process_matchstats(ctx, filename)
 		else
 			score_changed = false
 		end
-		
+
 		if score_changed == true then
 			msg = msg .. string.format("\n (curr_home_score: %d) (curr_away_score: %d) %s scored ", curr_home_score, curr_away_score, who_scored)
 			log("Score change: " .. msg)
 			log("Triggered by loaded file: " .. filename)
 			local tid = tonumber(ctx.tournament_id)
-			
-			-- specifics 
+
+			-- specifics
 			--- a) competitions with official goal songs, exclusive (one for all teams) or non-exclusive (tournament song followed by team song) - UEFA EURO, FIFA WC
 			--- b) competitions where goal songs are played for both teams, no official tournament song - ICC
 			--- c) everything else - goal song plays only when home team scores
-			
+
 			--- a)
 			if competition_assignment_map[tid] and stats.period < 5 then  -- 5 = penalty shootout
 				random_num = nil
@@ -328,7 +328,7 @@ local function process_matchstats(ctx, filename)
 					random_num = 1
 				else
 					random_num = math.random(#competition_assignment_map[tid])
-				end				
+				end
 				log("Selecting random goal song for competition ID " .. tostring(tid) .. ": Goal song no. " .. tostring(random_num) .. " (from " .. tostring(#competition_assignment_map[tid]) .. " goal songs(s) available)")
 				--- a1) exclusive song
 				if random_num and competition_assignment_map[tid][random_num][3] == 1 and competition_assignment_map[tid][random_num][1] ~= nil then
@@ -343,7 +343,7 @@ local function process_matchstats(ctx, filename)
 					goal_song:when_done(function(ctx)
 						goal_song = nil
 					end)
-				--- a2) non-exclusive song - competition song first, then either home or away team's song
+					--- a2) non-exclusive song - competition song first, then either home or away team's song
 				elseif random_num and competition_assignment_map[tid][random_num][3] == 0 and competition_assignment_map[tid][random_num][1] ~= nil then
 					dont_start2 = false
 					local comp_song_path = competition_assignment_map[tid][random_num][1]
@@ -418,7 +418,7 @@ local function process_matchstats(ctx, filename)
 					end
 				
 				end
-			--- b)
+				--- b)
 			elseif has_value(comp_both_teams_songs, tid) == true and stats.period < 5 then  -- 5 = penalty shootout
 				random_num = nil
 				local volume_corr_team = 0
@@ -431,7 +431,7 @@ local function process_matchstats(ctx, filename)
 						end
 						volume_corr_team = team_assignment_map[ctx.home_team][random_num][2] or 0
 						log("Selecting random goal song for a team: Goal song no. " .. tostring(random_num) .. " (from " .. tostring(#team_assignment_map[ctx.home_team]) .. " goal songs(s) available)")
-					
+
 						if team_assignment_map[ctx.home_team][random_num][1] ~= nil then
 							goal_song = audio.new(gsroot .. string.format("\\%s", team_assignment_map[ctx.home_team][random_num][1]))
 							settings['volume_correction'] = volume_corr_team
@@ -453,7 +453,7 @@ local function process_matchstats(ctx, filename)
 						end
 						volume_corr_team = team_assignment_map[ctx.away_team][random_num][2] or 0
 						log("Selecting random goal song for away team: Goal song no. " .. tostring(random_num) .. " (from " .. tostring(#team_assignment_map[ctx.away_team]) .. " goal songs(s) available)")
-					
+
 						if team_assignment_map[ctx.away_team][random_num][1] ~= nil then
 							goal_song = audio.new(gsroot .. string.format("\\%s", team_assignment_map[ctx.away_team][random_num][1]))
 							settings['volume_correction'] = volume_corr_team
@@ -465,9 +465,9 @@ local function process_matchstats(ctx, filename)
 								goal_song = nil
 							end)
 						end
-					end	
+					end
 				end
-			--- c)
+				--- c)
 			elseif who_scored == "home team" and stats.period < 5 then  -- 5 = penalty shootout
 				random_num = nil
 				local volume_corr_team = 0
@@ -479,7 +479,7 @@ local function process_matchstats(ctx, filename)
 					end
 					volume_corr_team = team_assignment_map[ctx.home_team][random_num][2] or 0
 					log("Selecting random goal song: Goal song no. " .. tostring(random_num) .. " (from " .. tostring(#team_assignment_map[ctx.home_team]) .. " goal songs(s) available)")
-				
+
 					if team_assignment_map[ctx.home_team][random_num][1] ~= nil then
 						goal_song = audio.new(gsroot .. string.format("\\%s", team_assignment_map[ctx.home_team][random_num][1]))
 						settings['volume_correction'] = volume_corr_team
@@ -491,7 +491,7 @@ local function process_matchstats(ctx, filename)
 							goal_song = nil
 						end)
 					end
-				end	
+				end
 			end
 		end
 		
@@ -502,13 +502,13 @@ end
 function m.data_ready(ctx, filename)
 	-- catch-all stats processing
 	process_matchstats(ctx, filename)
-	
+
 	if filename == "common\\script\\flow\\Match\\MatchSetupRematch.json" then
 		-- log("Rematch detected ... ")
 		curr_home_score = 0
 		curr_away_score = 0
 	end
-	
+
 	if settings['stop_on_replays'] == 1 and string.match(filename, "Asset\\model\\ball\\ball%d+\\#Win\\ball%.fpk") then
 		if goal_song then
 			log("goal_song ending, game loaded: " .. filename)
@@ -527,13 +527,13 @@ function m.data_ready(ctx, filename)
 			end
 		end
 	end
-	
-	if string.match(filename, "common\\demo\\fixdemo\\goal\\cut_data\\goal_hug_run_aim.*") or 
-				filename == "common\\script\\flow\\Match\\MatchPrePause.json" or
-				filename == "common\\script\\flow\\Match\\MatchDiscontinue.json" or 
-				filename == "common\\script\\flow\\Match\\MatchDiscontinueTeam.json" or
-				filename == "common\\script\\flow\\Match\\MatchEnd.json" or
-				filename == "common\\script\\flow\\Match\\MatchStatsResult.json" then
+
+	if string.match(filename, "common\\demo\\fixdemo\\goal\\cut_data\\goal_celebrate.*") or -- (goal_hug_run_aim.) old
+		filename == "common\\script\\flow\\Match\\MatchPrePause.json" or
+		filename == "common\\script\\flow\\Match\\MatchDiscontinue.json" or
+		filename == "common\\script\\flow\\Match\\MatchDiscontinueTeam.json" or
+		filename == "common\\script\\flow\\Match\\MatchEnd.json" or
+		filename == "common\\script\\flow\\Match\\MatchStatsResult.json" then
 		if goal_song then
 			log("goal_song ending, game loaded: " .. filename)
 			log(string.format("goal_song finishing: %s", goal_song:get_filename()))
@@ -555,7 +555,7 @@ function m.data_ready(ctx, filename)
 end
 
 local function apply_settings(ctx, log_it, save_it)
-    -- apply master volume change 
+	-- apply master volume change
 	if goal_song then
 		-- log("apply (goal_song): tonumber(settings['corrected_volume'] or 0): " .. tonumber(settings['corrected_volume'] or 0))
 		goal_song:set_volume((tonumber(settings['master_volume']) or default_volume) + (tonumber(settings['volume_correction']) or 0) )
@@ -575,132 +575,132 @@ local function apply_settings(ctx, log_it, save_it)
 			-- log("new settings['corrected_volume']: (gs2) " .. settings['corrected_volume'])
 		end
 	end
-	
+
 	if save_it then
-        save_ini("config.ini")
-    end
+		save_ini("config.ini")
+	end
 end
 
 function m.key_down(ctx, vkey)
-    if vkey == RELOAD_MAPS_KEY then
-        log("Starting manual map file reload ... ")
-        load_map_txt("map_teams.txt")
-        info_text = info_text .. "map_teams.txt reloaded\n"
+	if vkey == RELOAD_MAPS_KEY then
+		log("Starting manual map file reload ... ")
+		load_map_txt("map_teams.txt")
+		info_text = info_text .. "map_teams.txt reloaded\n"
 		load_map_txt("map_competitions.txt")
 		info_text = info_text .. "map_competitions.txt reloaded\n"
-        log("Manual map file reloading finished.")
-    elseif vkey == DEL_TEXT_KEY then
-        info_text = ""
+		log("Manual map file reloading finished.")
+	elseif vkey == DEL_TEXT_KEY then
+		info_text = ""
 	elseif vkey == NEXT_PROP_KEY then
-        if overlay_curr < #overlay_states then
-            overlay_curr = overlay_curr + 1
-        end
-    elseif vkey == PREV_PROP_KEY then
-        if overlay_curr > 1 then
-            overlay_curr = overlay_curr - 1
-        end
-    elseif vkey == NEXT_VALUE_KEY then
-        local s = overlay_states[overlay_curr]
-        if s.incr ~= nil then
-            settings[s.prop] = math.min(settings[s.prop] + s.incr, s.max)
-        elseif s.nextf ~= nil then
-            local curr_disp_val = tableInvert(s.keys)[settings[s.prop]]
-            local disp_val, conf_val = s.nextf(s.keys, s.vals, curr_disp_val)
+		if overlay_curr < #overlay_states then
+			overlay_curr = overlay_curr + 1
+		end
+	elseif vkey == PREV_PROP_KEY then
+		if overlay_curr > 1 then
+			overlay_curr = overlay_curr - 1
+		end
+	elseif vkey == NEXT_VALUE_KEY then
+		local s = overlay_states[overlay_curr]
+		if s.incr ~= nil then
+			settings[s.prop] = math.min(settings[s.prop] + s.incr, s.max)
+		elseif s.nextf ~= nil then
+			local curr_disp_val = tableInvert(s.keys)[settings[s.prop]]
+			local disp_val, conf_val = s.nextf(s.keys, s.vals, curr_disp_val)
 			settings[s.prop] = conf_val
-        end
-        apply_settings(ctx, false, true)
-    elseif vkey == PREV_VALUE_KEY then
-        local s = overlay_states[overlay_curr]
-        if s.decr ~= nil then
-            settings[s.prop] = math.max(settings[s.prop] + s.decr, s.min)
-        elseif s.prevf ~= nil then
-            local curr_disp_val = tableInvert(s.keys)[settings[s.prop]]
-            local disp_val, conf_val = s.prevf(s.keys, s.vals, curr_disp_val)
+		end
+		apply_settings(ctx, false, true)
+	elseif vkey == PREV_VALUE_KEY then
+		local s = overlay_states[overlay_curr]
+		if s.decr ~= nil then
+			settings[s.prop] = math.max(settings[s.prop] + s.decr, s.min)
+		elseif s.prevf ~= nil then
+			local curr_disp_val = tableInvert(s.keys)[settings[s.prop]]
+			local disp_val, conf_val = s.prevf(s.keys, s.vals, curr_disp_val)
 			settings[s.prop] = conf_val
-        end
-        apply_settings(ctx, false, true)
-    end
+		end
+		apply_settings(ctx, false, true)
+	end
 end
 
 function m.gamepad_input(ctx, inputs)
-    local v = inputs["RSy"]
-    if v then
-        if v == -1 and overlay_curr < #overlay_states then -- moving down
-            overlay_curr = overlay_curr + 1
+	local v = inputs["RSy"]
+	if v then
+		if v == -1 and overlay_curr < #overlay_states then -- moving down
+			overlay_curr = overlay_curr + 1
         elseif v == 1 and overlay_curr > 1 then -- moving up
-            overlay_curr = overlay_curr - 1
-        end
-    end
+			overlay_curr = overlay_curr - 1
+		end
+	end
 
-    v = inputs["RSx"]
-    if v then
-        if v == -1 then -- moving left
-            local s = overlay_states[overlay_curr]
-            if s.decr ~= nil then
-                settings[s.prop] = math.max(settings[s.prop] + s.decr, s.min)
-                -- set up the repeat change
-                delta = s.decr
-                frame_count = 0
-            elseif s.prevf ~= nil then
+	v = inputs["RSx"]
+	if v then
+		if v == -1 then -- moving left
+			local s = overlay_states[overlay_curr]
+			if s.decr ~= nil then
+				settings[s.prop] = math.max(settings[s.prop] + s.decr, s.min)
+				-- set up the repeat change
+				delta = s.decr
+				frame_count = 0
+			elseif s.prevf ~= nil then
 				local curr_disp_val = tableInvert(s.keys)[settings[s.prop]]
 				local disp_val, conf_val = s.prevf(s.keys, s.vals, curr_disp_val)
 				settings[s.prop] = conf_val
-            end
-            apply_settings(ctx, false, false) -- apply
+			end
+			apply_settings(ctx, false, false) -- apply
         elseif v == 1 then -- moving right
-            local s = overlay_states[overlay_curr]
-            if s.decr ~= nil then
-                settings[s.prop] = math.min(settings[s.prop] + s.incr, s.max)
-                -- set up the repeat change
-                delta = s.incr
-                frame_count = 0
-            elseif s.nextf ~= nil then
+			local s = overlay_states[overlay_curr]
+			if s.decr ~= nil then
+				settings[s.prop] = math.min(settings[s.prop] + s.incr, s.max)
+				-- set up the repeat change
+				delta = s.incr
+				frame_count = 0
+			elseif s.nextf ~= nil then
 				local curr_disp_val = tableInvert(s.keys)[settings[s.prop]]
 				local disp_val, conf_val = s.nextf(s.keys, s.vals, curr_disp_val)
 				settings[s.prop] = conf_val
-            end
-            apply_settings(ctx, false, false) -- apply
+			end
+			apply_settings(ctx, false, false) -- apply
         elseif v == 0 then -- stop change
-            delta = 0
+			delta = 0
             apply_settings(ctx, false, true) -- apply and save
-        end
-    end
+		end
+	end
 end
 
 local function repeat_change(ctx, after_num_frames, change)
-    if change ~= 0 then
-        frame_count = frame_count + 1
-        if frame_count >= after_num_frames then
-            local s = overlay_states[overlay_curr]
+	if change ~= 0 then
+		frame_count = frame_count + 1
+		if frame_count >= after_num_frames then
+			local s = overlay_states[overlay_curr]
 			settings[s.prop] = math.min(math.max(s.min, settings[s.prop] + change), s.max)
-            apply_settings(ctx, false, false) -- apply
-        end
-    end
+			apply_settings(ctx, false, false) -- apply
+		end
+	end
 end
 
 function m.overlay_on(ctx)
 	-- repeat change from gamepad, if delta exists
-    repeat_change(ctx, 30, delta)
-    -- construct ui text
+	repeat_change(ctx, 30, delta)
+	-- construct ui text
     for i,v in ipairs(overlay_states) do
-        local s = overlay_states[i]
-        if i == overlay_curr then
+		local s = overlay_states[i]
+		if i == overlay_curr then
 			if s.incr ~= nil then
 				ui_lines[i] = string.format("\n---> %s <---", string.format(s.ui, settings[s.prop]))
 			elseif s.nextf ~= nil then
 				local curr_disp_val = tableInvert(s.keys)[settings[s.prop]]
 				ui_lines[i] = string.format("\n---> %s <---", string.format(s.ui, curr_disp_val))
 			end
-        else
+		else
 			if s.incr ~= nil then
 				ui_lines[i] = string.format("\n     %s", string.format(s.ui, settings[s.prop]))
 			elseif s.nextf ~= nil then
 				local curr_disp_val = tableInvert(s.keys)[settings[s.prop]]
 				ui_lines[i] = string.format("\n     %s", string.format(s.ui, curr_disp_val))
 			end
-        end
-    end
-    return string.format([[version %s
+		end
+	end
+	return string.format([[version %s
 Press [0] to reload map .txt files
 Press [DEL] to clear info messages
 	
@@ -713,18 +713,18 @@ end
 
 function m.init(ctx)
 	if gsroot:sub(1,1)=='.' then
-        gsroot = ctx.sider_dir .. gsroot
-    end
+		gsroot = ctx.sider_dir .. gsroot
+	end
 	math.randomseed(os.time())
 	settings = load_ini("config.ini")
 	load_map_txt("map_teams.txt")
 	load_map_txt("map_competitions.txt")
-	
-    ctx.register("overlay_on", m.overlay_on)
+
+	ctx.register("overlay_on", m.overlay_on)
 	ctx.register("set_teams", m.teams_selected)
 	ctx.register("livecpk_data_ready", m.data_ready)
 	ctx.register("key_down", m.key_down)
-    ctx.register("gamepad_input", m.gamepad_input)
+	ctx.register("gamepad_input", m.gamepad_input)
 end
 
 return m

@@ -1,0 +1,16 @@
+"InstallScript"
+{
+	"Run Process"
+	{
+		"Settings"
+		{
+			"HasRunKey"		"0"
+			"Process 1"		"%INSTALLDIR%\\Settings.exe"
+			"AsCurrentUser"		"1"
+		}
+	}
+}
+"kvsignatures"
+{
+	"InstallScript"		"9e553ceb7f14e6c4edf4480e2cebf7107008c40d0395126e3a59e5f4cc80bf32ecaf0a4de0e34199bf5fb2c0548d1de13d87c244d333e354934fed121e13cc49dbe414f350e251d6053de65cd228011d91af006e68f444e37417b3ab3d7c9affcf1e97655d9995e8e76e7b301e8286eb513bee7d66af75ebdf636192279d287d"
+}

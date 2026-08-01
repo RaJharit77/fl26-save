@@ -211,6 +211,16 @@ local function checkHome(tab, val)
 	return false
 end
 
+local function checkAway(tab, val)
+    for key, value in pairs(tab) do
+        if val == key then
+            awayfolder = value[1][1]
+            return true
+        end
+    end
+    return false
+end
+
 local function check(tab, val)
     for key, value in pairs(tab) do
         if val == key then

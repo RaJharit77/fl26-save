@@ -1,4 +1,4 @@
--- Super Games Stadium CornerFlags
+-- Stadium CornerFlags
 
 local fileroot = ".\\content\\Stadium_CornerFlag"
 
@@ -42,7 +42,7 @@ elseif tid == 24 and matchid == 53 then
 CornerFlag = "Competitions\\Coppa Italia"
 elseif tid == 89 then
 CornerFlag = "Competitions\\Supercoppa Italiana"
-elseif tid == 25 and matchid == 53 then
+elseif tid == 25 then
 CornerFlag = "Competitions\\Copa del Rey"
 elseif tid == 87 then
 CornerFlag = "Competitions\\Supercopa de Espana"
@@ -62,8 +62,6 @@ elseif tid == 28 and matchid == 53 then
 CornerFlag = "Competitions\\Taca de Portugal"
 elseif tid == 91 then
 CornerFlag = "Competitions\\Supertaca Candido de Oliveira"
-elseif tid == 58 then
-CornerFlag = "Default"
 elseif tid == 41 or tid == 1065 or tid == 2089 or tid == 3113 or tid == 4137 or tid == 5161 or tid == 6185 or tid == 42 then
 CornerFlag = "Competitions\\UEFA Euro"
 elseif tid == 43 or tid == 104 or tid == 1128 or tid == 2152 or tid == 3176 then
@@ -73,42 +71,26 @@ CornerFlag = "Competitions\\FIFA World Cup"
 
 --Spain Teams
 
-elseif (home == 108) and (tid == 19) then
-CornerFlag = "Teams\\Spain\\Barcelona\\LaLiga"
-elseif (home == 108) and (tid == 25) then
-CornerFlag = "Teams\\Spain\\Barcelona\\LaLiga"
-elseif (home == 108) and (tid == 2 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027 or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195 or tid == 4) then
-CornerFlag = "Teams\\Spain\\Barcelona\\UCL"
-elseif home == 108 then
-CornerFlag = "Teams\\Spain\\Barcelona\\LaLiga"
-elseif (home == 109) and (tid == 2 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027 or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195 or tid == 4) then
+elseif (home == 109) and (tid == 2 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027 or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195) then
 CornerFlag = "Teams\\Spain\\Real Madrid\\CL"
 elseif home == 109 then
 CornerFlag = "Teams\\Spain\\Real Madrid\\Liga"
+elseif home == 108 then
+CornerFlag = "Teams\\Spain\\Barcelona"
 elseif home == 110 then
 CornerFlag = "Teams\\Spain\\Valencia"
-elseif (home == 172) and (tid == 2 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027 or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195 or tid == 4) then
-CornerFlag = "Teams\\Spain\\Atletico de Madrid\\UCL"
 elseif home == 172 then
 CornerFlag = "Teams\\Spain\\Atletico de Madrid"
 elseif home == 194 then
 CornerFlag = "Teams\\Spain\\Betis"
 elseif home == 195 then
 CornerFlag = "Teams\\Spain\\Celta"
-elseif (home == 196) and (tid == 2 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027 or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195 or tid == 4) then
-CornerFlag = "Teams\\Spain\\Real Sociedad\\UCL"
-elseif home == 196 and (tid == 5 or tid == 1029 or tid == 2053 or tid == 3077 or tid == 4101 or tid == 5125 or tid == 6149 or tid == 7173 or tid == 8197 or tid == 9221 or tid == 10245  or tid == 11269 or tid == 12293 or tid == 6 or tid == 2 or tid == 4 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027  or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195) then
-CornerFlag = "Teams\\Spain\\Real Sociedad\\UEL"
 elseif home == 196 then
 CornerFlag = "Teams\\Spain\\Real Sociedad"
 elseif home == 258 then
 CornerFlag = "Teams\\Spain\\Athletic"
 elseif home == 263 then
 CornerFlag = "Teams\\Spain\\Osasuna"
-elseif (home == 265) and (tid == 2 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027 or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195 or tid == 4) then
-CornerFlag = "Teams\\Spain\\Sevilla\\UCL"
-elseif home == 265 and (tid == 5 or tid == 1029 or tid == 2053 or tid == 3077 or tid == 4101 or tid == 5125 or tid == 6149 or tid == 7173 or tid == 8197 or tid == 9221 or tid == 10245  or tid == 11269 or tid == 12293 or tid == 6 or tid == 2 or tid == 4 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027  or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195) then
-CornerFlag = "Teams\\Spain\\Sevilla\\UEL"
 elseif home == 265 then
 CornerFlag = "Teams\\Spain\\Sevilla"
 elseif home == 266 then
@@ -212,8 +194,6 @@ elseif home == 103 and (tid == 5 or tid == 1029 or tid == 2053 or tid == 3077 or
 CornerFlag = "Teams\\England\\Liverpool\\UEFA"
 elseif home == 103 then
 CornerFlag = "Teams\\England\\Liverpool"
-elseif (home == 173) and (tid == 2 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027 or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195 or tid == 4) then
-CornerFlag = "Teams\\England\\Manchester City\\UCL"
 elseif home == 173 then
 CornerFlag = "Teams\\England\\Manchester City"
 elseif home == 100 then
@@ -226,8 +206,6 @@ elseif home == 4194 then
 CornerFlag = "Teams\\England\\Sheffield"
 elseif home == 207 then
 CornerFlag = "Teams\\England\\Southampton"
-elseif (home == 179) and (tid == 2 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027 or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195 or tid == 4) then
-CornerFlag = "Teams\\England\\Tottenham\\UCL"
 elseif home == 179 then
 CornerFlag = "Teams\\England\\Tottenham"
 elseif home == 398 then
@@ -299,10 +277,8 @@ CornerFlag = "Teams\\England\\Coventry City"
 
 --Germany Teams
 
-elseif (home == 126) and (tid == 2 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027 or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195 or tid == 4) then
-CornerFlag = "Teams\\Germany\\Dortmund\\UCL"
-elseif home == 126 and (tid == 5 or tid == 1029 or tid == 2053 or tid == 3077 or tid == 4101 or tid == 5125 or tid == 6149 or tid == 7173 or tid == 8197 or tid == 9221 or tid == 10245  or tid == 11269 or tid == 12293 or tid == 6 or tid == 2 or tid == 4 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027  or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195) then
-CornerFlag = "Teams\\Germany\\Dortmund\\UEFA"
+	elseif home == 126 and (tid == 5 or tid == 1029 or tid == 2053 or tid == 3077 or tid == 4101 or tid == 5125 or tid == 6149 or tid == 7173 or tid == 8197 or tid == 9221 or tid == 10245  or tid == 11269 or tid == 12293 or tid == 6 or tid == 2 or tid == 4 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027  or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195) then
+		   CornerFlag = "Teams\\Germany\\Dortmund\\UEFA"
 elseif home == 126 then
 CornerFlag = "Teams\\Germany\\Dortmund"
 elseif home == 232 then
@@ -346,14 +322,10 @@ CornerFlag = "Teams\\Germany\\bielefeld"
 
 --Italy Teams
 
-elseif (home == 119) and (tid == 2 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027 or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195 or tid == 4) then
-CornerFlag = "Teams\\Italy\\Inter\\UCL"
 elseif home == 119 then
 CornerFlag = "Teams\\Italy\\Inter"
 elseif home == 120 then
 CornerFlag = "Teams\\Italy\\Juve"
-elseif (home == 121) and (tid == 2 or tid == 1026 or tid == 2050 or tid == 3074 or tid == 4098 or tid == 5122 or tid == 6146 or tid == 7170 or tid == 8149 or tid == 3 or tid == 1027 or tid == 2051 or tid == 3075 or tid == 4099 or tid == 5123 or tid == 6147 or tid == 7171 or tid == 8195 or tid == 4) then
-CornerFlag = "Teams\\Italy\\Milan\\UCL"
 elseif home == 121 then
 CornerFlag = "Teams\\Italy\\Milan"
 elseif home == 122 then
@@ -378,6 +350,89 @@ elseif home == 323 then
 CornerFlag = "Teams\\Italy\\Genoa"
 elseif home == 336 then
 CornerFlag = "Teams\\Italy\\Hellas"
+elseif home == 327 then
+CornerFlag = "Teams\\Italy\\Napoli"
+elseif home == 4914 then
+CornerFlag = "Teams\\Italy\\Monza"
+elseif home == 0317 then
+CornerFlag = "Teams\\Italy\\Ascoli"
+elseif home == 4241 then
+CornerFlag = "Teams\\Italy\\Ac pisa 1909"
+elseif home == 1920 then
+CornerFlag = "Teams\\Italy\\As Cittadella"
+elseif home == 319 then
+CornerFlag = "Teams\\Italy\\Bari"
+elseif home == 187 then
+CornerFlag = "Teams\\Italy\\Brescia"
+elseif home == 4219 then
+CornerFlag = "Teams\\Italy\\Como 1907"
+elseif home == 4928 then
+CornerFlag = "Teams\\Italy\\Cosenza"
+elseif home == 4234 then
+CornerFlag = "Teams\\Italy\\Frosinone"
+elseif home == 238 then
+CornerFlag = "Teams\\Italy\\Palermo"
+elseif home ==  4915 then
+CornerFlag = "Teams\\Italy\\Pordenone"
+elseif home == 4225 then
+CornerFlag = "Teams\\Italy\\Reggiana"
+elseif home == 4228 then
+CornerFlag = "Teams\\Italy\\Sudtirol"
+elseif home == 1919 then
+CornerFlag = "Teams\\Italy\\Sassuolo"
+elseif home == 1600 then
+CornerFlag = "Teams\\Italy\\Spezia"
+elseif home == 331 then
+CornerFlag = "Teams\\Italy\\Ternana Calcio"
+elseif home == 4220 then
+CornerFlag = "Teams\\Italy\\Us Cremonese"
+elseif home == 4244 then
+CornerFlag = "Teams\\Italy\\Us Salernitana 1919"
+elseif home == 4221 then
+CornerFlag = "Teams\\Italy\\Us Feralpisalo"
+elseif home == 4233 then
+CornerFlag = "Teams\\Italy\\US Catanzaro"
+elseif home == 5628 then
+CornerFlag = "Teams\\Italy\\Calcio Lecco 1912"
+elseif home == 237 then
+CornerFlag = "Teams\\Italy\\Modena"
+
+
+--China Teams
+
+elseif home == 295 then
+CornerFlag = "Teams\\China\\Beijing guoan"
+elseif home == 5185 then
+CornerFlag = "Teams\\China\\Cangzhou mighty lions"
+elseif home == 5167 then
+CornerFlag = "Teams\\China\\Changchun yatai"
+elseif home == 5168 then
+CornerFlag = "Teams\\China\\Chongqing liangjiang"
+elseif home == 4092 then
+CornerFlag = "Teams\\China\\Dalian pro"
+elseif home == 4943 then
+CornerFlag = "Teams\\China\\Guangzhou city"
+elseif home == 310 then
+CornerFlag = "Teams\\China\\Guangzhou fc"
+elseif home == 5170 then
+CornerFlag = "Teams\\China\\Hebei fc"
+elseif home == 5171 then
+CornerFlag = "Teams\\China\\Henan songshan longmen"
+elseif home == 5183 then
+CornerFlag = "Teams\\China\\Qingdao fc"
+elseif home == 4168 then
+CornerFlag = "Teams\\China\\Shandong taishan"
+elseif home == 4094 then
+CornerFlag = "Teams\\China\\Shanghai port"
+elseif home == 5173 then
+CornerFlag = "Teams\\China\\Shanghai shenhua"
+elseif home == 5184 then
+CornerFlag = "Teams\\China\\Shenzhen fc"
+elseif home == 5175 then
+CornerFlag = "Teams\\China\\Tianjin tigers"
+elseif home == 4095 then
+CornerFlag = "Teams\\China\\Wuhan fc"
+
 
 --France Teams
 
@@ -698,6 +753,76 @@ CornerFlag = "Teams\\Other UEFA\\Qaraba?"
 
 elseif home == 2209 then
 CornerFlag = "Teams\\Chile\\Universidad de Chile"
+elseif home == 2547 then
+CornerFlag = "Teams\\Chile\\Antofagasta"
+elseif home == 2192 then
+CornerFlag = "Teams\\Chile\\Audax Italiano"
+elseif home == 2706 then
+CornerFlag = "Teams\\Chile\\Barnechea"
+elseif home == 2553 then
+CornerFlag = "Teams\\Chile\\Cobresal"
+elseif home == 2549 then
+CornerFlag = "Teams\\Chile\\Cobreloa"
+elseif home == 1256 then
+CornerFlag = "Teams\\Chile\\Colo Colo"
+elseif home == 2707 then
+CornerFlag = "Teams\\Chile\\Coquimbo Unido"
+elseif home == 2708 then
+CornerFlag = "Teams\\Chile\\Curico Unido"
+elseif home == 2710 then
+CornerFlag = "Teams\\Chile\\Deportes Copiapo"
+elseif home == 2544 then
+CornerFlag = "Teams\\Chile\\Deportes la Serena"
+elseif home == 5389 then
+CornerFlag = "Teams\\Chile\\Deportes Melipilla"
+elseif home == 4321 then
+CornerFlag = "Teams\\Chile\\Deportes Temuco"
+elseif home == 2208 then
+CornerFlag = "Teams\\Chile\\Everton"
+elseif home == 2494 then
+CornerFlag = "Teams\\Chile\\Fernandez Vial"
+elseif home == 2545 then
+CornerFlag = "Teams\\Chile\\Huachipato"
+elseif home == 2543 then
+CornerFlag = "Teams\\Chile\\Deportes Iquique"
+elseif home == 5006 then
+CornerFlag = "Teams\\Chile\\Deportes Puerto Montt"
+elseif home == 5582 then
+CornerFlag = "Teams\\Chile\\Deportes Santa Cruz"
+elseif home == 2712 then
+CornerFlag = "Teams\\Chile\\Magallanes"
+elseif home == 2699 then
+CornerFlag = "Teams\\Chile\\Nublense"
+elseif home == 2541 then
+CornerFlag = "Teams\\Chile\\O'Higgins"
+elseif home == 2548 then
+CornerFlag = "Teams\\Chile\\Palestino"
+elseif home == 2550 then
+CornerFlag = "Teams\\Chile\\Rangers de Talca"
+elseif home == 2700 then
+CornerFlag = "Teams\\Chile\\San Marcos de Arica"
+elseif home == 2714 then
+CornerFlag = "Teams\\Chile\\San Luis de Quillota"
+elseif home == 2715 then
+CornerFlag = "Chile\\Santiago Morning"
+elseif home == 2542 then
+CornerFlag = "Teams\\Chile\\Santiago Wanders"
+elseif home == 2360 then
+CornerFlag = "Teams\\Chile\\Union Espanola"
+elseif home == 2546 then
+CornerFlag = "Teams\\Chile\\Union La Calera"
+elseif home == 2552 then
+CornerFlag = "Teams\\Chile\\Union San Felipe"
+elseif home == 2191 then
+CornerFlag = "Teams\\Chile\\Universidad Catolica"
+elseif home == 2209 then
+CornerFlag = "Teams\\Chile\\Universidad de Chile"
+elseif home == 2551 then
+CornerFlag = "Teams\\Chile\\Universidad de Concepcion"
+elseif home == 2709 then
+CornerFlag = "Teams\\Chile\\Deportes Concepción"
+elseif home == 2483 then
+CornerFlag = "Teams\\Chile\\Deportes Recoleta"
 
 --Ecuador Teams
 
@@ -715,6 +840,138 @@ elseif home == 1263 then
 CornerFlag = "Teams\\Uruguay\\Peñarol"
 elseif home == 1262 then
 CornerFlag = "Teams\\Uruguay\\Nacional"
+
+--Mexico Teams
+
+elseif home == 1777 then
+CornerFlag = "Teams\\Mexico\\Atlas"
+elseif home == 5379 then
+CornerFlag = "Teams\\Mexico\\Atlatico San Luis"
+elseif home == 1265 then
+CornerFlag = "Teams\\Mexico\\Cruz Azul"
+elseif home == 1700 then
+CornerFlag = "Teams\\Mexico\\Guadalajara"
+elseif home == 5153 then
+CornerFlag = "Teams\\Mexico\\Juarez"
+elseif home == 1789 then
+CornerFlag = "Teams\\Mexico\\Leon"
+elseif home == 5730 then
+CornerFlag = "Teams\\Mexico\\Mazatlan"
+elseif home == 1778 then
+CornerFlag = "Teams\\Mexico\\Monterrey"
+elseif home == 5130 then
+CornerFlag = "Teams\\Mexico\\Necaxa"
+elseif home == 1699 then
+CornerFlag = "Teams\\Mexico\\Pachuca"
+elseif home == 1772 then
+CornerFlag = "Teams\\Mexico\\Puebla"
+elseif home == 1775 then
+CornerFlag = "Teams\\Mexico\\Pumas"
+elseif home == 1792 then
+CornerFlag = "Teams\\Mexico\\Queretaro"
+elseif home == 1779 then
+CornerFlag = "Teams\\Mexico\\Santos"
+elseif home == 1782 then
+CornerFlag = "Teams\\Mexico\\Tigres"
+elseif home == 1785 then
+CornerFlag = "Teams\\Mexico\\Tijuana"
+elseif home == 1773 then
+CornerFlag = "Teams\\Mexico\\Toluca"
+
+
+--Japan Teams
+
+elseif home == 169 then
+CornerFlag = "Teams\\Japan\\Avispa Fukuoka"
+elseif home == 168 then
+CornerFlag = "Teams\\Japan\\Cerezo Osaka"
+elseif home == 144 then
+CornerFlag = "Teams\\Japan\\Consadole Sapporo"
+elseif home == 150 then
+CornerFlag = "Teams\\Japan\\Fc Tokyo"
+elseif home == 157 then
+CornerFlag = "Teams\\Japan\\Gamba Osaka"
+elseif home == 146 then
+CornerFlag = "Teams\\Japan\\Kashima"
+elseif home == 149 then
+CornerFlag = "Teams\\Japan\\Kashiwa Reysol"
+elseif home == 163 then
+CornerFlag = "Teams\\Japan\\Kawasaki Frontale"
+elseif home == 155 then
+CornerFlag = "Teams\\Japan\\Nagoya Grampus"
+elseif home == 153 then
+CornerFlag = "Teams\\Japan\\S Pulse"
+elseif home == 170 then
+CornerFlag = "Teams\\Japan\\Sagan Tosu"
+elseif home == 159 then
+CornerFlag = "Teams\\Japan\\Sanfrecce Hiroshima Fc"
+elseif home == 165 then
+CornerFlag = "Teams\\Japan\\Shonan Bellmare"
+elseif home == 1270 then
+CornerFlag = "Teams\\Japan\\Tokushima Vortis"
+elseif home == 171 then
+CornerFlag = "Teams\\Japan\\Trinita Fc"
+elseif home == 147 then
+CornerFlag = "Teams\\Japan\\Urawa Red Diamonds"
+elseif home == 145 then
+CornerFlag = "Teams\\Japan\\Vegalta Sendai"
+elseif home == 158 then
+CornerFlag = "Teams\\Japan\\Vissel Kobe"
+elseif home == 164 then
+CornerFlag = "Teams\\Japan\\Yokohama Fc"
+elseif home == 152 then
+CornerFlag = "Teams\\Japan\\Yokohama Marinos"
+
+
+--Colombia Teams
+
+elseif home == 5207 then
+CornerFlag = "Teams\\Colombia\\Alianza petrolera"
+elseif home == 1257 then
+CornerFlag = "Teams\\Colombia\\America de cali"
+elseif home == 5208 then
+CornerFlag = "Teams\\Colombia\\Atletico bucaramanga"
+elseif home == 2193 then
+CornerFlag = "Teams\\Colombia\\Atletico nacional"
+elseif home == 2195 then
+CornerFlag = "Teams\\Colombia\\Boyaca chico"
+elseif home == 2361 then
+CornerFlag = "Teams\\Colombia\\Deportes tolima"
+elseif home == 2650 then
+CornerFlag = "Teams\\Colombia\\Deportivo cali"
+elseif home == 2651 then
+CornerFlag = "Teams\\Colombia\\Deportivo pasto"
+elseif home == 5370 then
+CornerFlag = "Teams\\Colombia\\Deportivo pereira"
+elseif home == 2652 then
+CornerFlag = "Teams\\Colombia\\Envigado"
+elseif home == 2210 then
+CornerFlag = "Teams\\Colombia\\Independiente medellin"
+elseif home == 5210 then
+CornerFlag = "Teams\\Colombia\\Jaguares de cordoba"
+elseif home == 2285 then
+CornerFlag = "Teams\\Colombia\\Junior"
+elseif home == 2654 then
+CornerFlag = "Teams\\Colombia\\La equidad"
+elseif home == 1258 then
+CornerFlag = "Teams\\Colombia\\Millonarios"
+elseif home == 2284 then
+CornerFlag = "Teams\\Colombia\\Once caldas"
+elseif home == 2655 then
+CornerFlag = "Teams\\Colombia\\Patriotas boyaca"
+elseif home == 2653 then
+CornerFlag = "Teams\\Colombia\\Rionegro aguilas"
+elseif home == 2657 then
+CornerFlag = "Teams\\Colombia\\Santa fe"
+elseif home == 2648 then
+CornerFlag = "Teams\\Colombia\\Atletico Huila"
+elseif home == 2649 then
+CornerFlag = "Teams\\Colombia\\Deportes Quindio"
+elseif home == 5209 then
+CornerFlag = "Teams\\Colombia\\Cortuluá"
+elseif home == 5376 then
+CornerFlag = "Teams\\Colombia\\Club Unión Magdalena"
+
 
 --Brazilian Teams
 
@@ -849,6 +1106,8 @@ elseif tid == 79 then
 CornerFlag = "Competitions\\EFL\\Championship"
 elseif tid == 83 then
 CornerFlag = "Competitions\\EFL\\Play-Off"
+elseif tid == 19 then
+CornerFlag = "Competitions\\LaLiga"
 elseif tid == 80 then
 CornerFlag = "Competitions\\LaLiga Smartbank"
 elseif (home == 187 or 327 or 333 or 336 or 1919 or 4237 or 4923) and (tid == 18) then
@@ -877,7 +1136,7 @@ elseif tid == 59 then
 CornerFlag = "Competitions\\Copa Argentina"
 elseif tid == 8 or tid == 9 or tid == 10 or tid == 6153 or tid == 1032 or tid == 2056 or tid == 3080 or tid == 4104 or tid == 3081 or tid == 4105 or tid == 5129 or tid == 7177 or tid == 8201 then
 CornerFlag = "Competitions\\Copa Libertadores"
-elseif tid == 44 then
+elseif tid == 44 or tid == 1068 or tid == 2092 or tid == 3116 or tid == 4140 or tid == 45 then
 CornerFlag = "Competitions\\AFC Asian Cup"
 elseif tid == 46 then
 CornerFlag = "Competitions\\Africa Cup of Nations"
@@ -956,6 +1215,8 @@ elseif (home == 4124 or home == 4125 or home == 4140 or home == 185 or home == 1
 CornerFlag = "Competitions\\Bundesliga"
 elseif (home == 234 or home == 186 or home == 320 or home == 188 or home == 235 or home == 124 or home == 323 or home == 119 or home == 120 or home == 122 or home == 121 or home == 327 or home == 123 or home == 125 or home == 240 or home == 1919 or home == 4923 or home == 4234 or home == 333 or home == 190) and (away == 234 or away == 186 or away == 320 or away == 188 or away == 235 or away == 124 or away == 323 or away == 119 or away == 120 or away == 122 or away == 121 or away == 327 or away == 123 or away == 125 or away == 240 or away == 1919 or away == 4923 or away == 4234 or away == 333 or away == 190) then
 CornerFlag = "Competitions\\Serie A"
+elseif (home == 258 or home == 172 or home == 108 or home == 195 or home == 4145 or home == 4146 or home == 259 or home == 362 or home == 2187 or home == 2188 or home == 4272 or home == 366 or home == 370 or home == 194 or home == 109 or home == 196 or home == 266 or home == 265 or home == 110 or home == 267) and (away == 258 or away == 172 or away == 108 or away == 195 or away == 4145 or away == 4146 or away == 259 or away == 362 or away == 2187 or away == 2188 or away == 4272 or away == 366 or away == 370 or away == 194 or away == 109 or away == 196 or away == 266 or away == 265 or away == 110 or away == 267) then
+CornerFlag = "Competitions\\LaLiga"
 elseif (home == 243 or home == 116 or home == 242 or home == 339 or home == 342 or home == 344 or home == 117 or home == 345 or home == 244 or home == 245 or home == 349 or home == 246 or home == 256 or home == 118 or home == 251 or home == 252 or home == 355 or home == 255) and (away == 243 or away == 116 or away == 242 or away == 339 or away == 342 or away == 344 or away == 117 or away == 345 or away == 244 or away == 245 or away == 349 or away == 246 or away == 256 or away == 118 or away == 251 or away == 252 or away == 355 or away == 255) then
 CornerFlag = "Competitions\\Eredivisie"
 elseif (home == 2623 or home == 5202 or home == 5360 or home == 1989 or home == 5353 or home == 273 or home == 1991 or home == 197 or home == 130 or home == 5203 or home == 1995 or home == 2625 or home == 1996 or home == 5204 or home == 5354 or home == 1809 or home == 1945 or home == 5206) and (away == 2623 or away == 5202 or away == 5360 or away == 1989 or away == 5353 or away == 273 or away == 1991 or away == 197 or away == 130 or away == 5203 or away == 1995 or away == 2625 or away == 1996 or away == 5204 or away == 5354 or away == 1809 or away == 1945 or away == 5206) then

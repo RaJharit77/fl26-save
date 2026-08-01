@@ -1,0 +1,177 @@
+#Goalnets Competition Map File
+#Format: competition_id,match_stage,preset_name
+#- competition_id: The ID of the tournament.
+#- match_stage: 53 for Final, 52 for Semi-Final, etc. Use 0 for any stage.
+#- preset_name: The name of the style from the team_presets table in the lua file.
+#FIFA Club World Cup (ID: 1)
+#Use the "CWC_Final" preset for the final match (stage 53)
+
+# Use the 'The_Emirates_FA_Cup' preset for the FA Cup Final (ID 23, Stage 53)
+#23,53,The_Emirates_FA_Cup
+
+# For the Champions League Final (ID 4, Stage 53), provide three options.
+# 'UCL_Final_1' will be the default, but 2 and 3 can be selected in-game.
+#4,53,UCL_Final_1,UCL_Final_2,UCL_Final_3
+
+#1,53,CWC_Final
+
+
+# ENGLAND   
+23,53,The_Emirates_FA_Cup 		#Final
+23,52,The_Emirates_FA_Cup  		#Semi-Final
+86,53,The_FA_Community_Shield
+
+###########################
+# ITALY
+24,53,Coppa_Italia
+89,53,Supercoppa_Italiana
+
+###########################
+# SPAIN
+25,53,Copa_del_Rey
+87,53,Supercopa_de_Espana
+
+###########################
+# FRANCE
+26,53,Coupe_de_France
+88,53,Trophee_des_Champions
+
+###########################
+# GERMANY
+53,53,DFB_Pokal
+95,53,DFL_Supercup_Berlin,DFL_Supercup_München,DFL_Supercup_Dortmund,DFL_Supercup_Leipzig
+
+###########################
+# NETHERLANDS
+27,53,KNVB_Cup
+90,53,Johan_Cruyff_Shield
+
+###########################
+# TURKEY
+125,53,Turkish_Cup
+130,53,Turkish_Super_Cup
+
+###########################
+# SCOTLAND
+137,53,Scottish_Cup
+
+###########################
+# GREECE
+124,53,Greek_Cup
+
+###########################
+# DENMARK
+142,53,DBU_Cup
+
+###########################
+# BELGIUM
+122,53,Croky_Cup
+128,53,Belgian_Super_Cup
+
+###########################
+# PORTUGAL
+28,53,Taca_de_Portugal
+91,53,Supertaca_Candido_de_Oliveira
+
+###########################
+# RUSSIA
+123,53,Russian_Cup
+129,53,Russian_Super_Cup
+
+###########################
+# ARGENTINA
+59,53,Copa_Argentina
+92,53,Supercopa_Argentina
+
+###########################
+# BRASIL
+31,53,Copa_do_Brasil
+
+###########################
+# CHILE
+68,53,Copa_Chile
+
+###########################
+# COLOMBIA
+126,53,Copa_Colombia
+131,53,Supercopa_Colombia
+
+###########################
+# USA
+#54,53,MLS_Cup
+
+###########################
+# JAPAN
+55,53,Emperors_Cup
+
+###########################
+# CHINA
+127,53,Chinese_FA_Cup
+
+###########################
+# SAUDI ARABIA
+164,53,KSA_Cup
+165,53,KSA_Supercup
+
+###########################
+# CONMEBOL
+10, Copa_Libertadores
+43, COPA_AMERICA_KO
+104, COPA_AMERICA_GS
+
+###########################
+# CAF Africa Cup of Nations
+46, AFCON
+
+#################################################################################
+# FIFA
+#34, 0,      		#World Cup Group-stage
+1058,WC_GA_Lumen_Field						#World Cup Group A
+2082,WC_GB_Lincoln_Financial_Field			#World Cup Group B
+3106,WC_GC_Rose_Bowl						#World Cup Group C
+4130,WC_GD 									#World Cup Group D
+5154,WC_GE									#World Cup Group E
+6178,WC_GF									#World Cup Group F
+7202,WC_GG									#World Cup Group G
+8226,WC_GH						 			#World Cup Group H
+
+35,51,WC_GA_Lumen_Field 					#World Cup 1/4 Final
+35,52,WC_GB_Lincoln_Financial_Field 		#World Cup 1/2 Final
+35,53,WC_GA_Lumen_Field 					#World Cup Final
+
+#Club World Cup (KONAMI CUP)
+#47,FIFA_CWC1
+#48,FIFA_CWC2
+
+#1071, 0, FIFA_CWC3
+#2095, 0, FIFA_CWC4
+#3119, 0, FIFA_CWC5
+#4143, 0, FIFA_CWC6
+#5167, 0, FIFA_CWC7
+#6191, 0, FIFA_CWC8
+#7215, 0, FIFA_CWC9
+#8239, 0, FIFA_CWC10
+
+#################################################################################
+# UEFA
+4,53, Champions_League      		#Champions League Final
+6,53, Europa_League     			#Europa League Final
+7,53, UEFA_Super_Cup				#UEFA Super Cup
+	
+1065,0, EURO24_Munchen     			#EURO 24, Group A
+2089,0, EURO24_Dortmund     			#EURO 24, Group B
+3113,0, EURO24_Hamburg     			#EURO 24, Group C
+4137,0, EURO24_Stuttgart     			#EURO 24, Group D
+5161,0, EURO24_Koln     				#EURO 24, Group E
+6185,0, EURO24_Dusseldorf     		#EURO 24, Group F
+
+42,51,EURO24_Gelsenkirchen     		#EURO 24, 1/4 Final
+42,52,EURO24_Munchen     			#EURO 24, 1/2 Final
+42,53,EURO24_Berlin     			#EURO 24, Final
+
+
+#################################################################################
+# AFC
+#44,AFC_Asian_Cup_GS
+#45,AFC_Asian_Cup_KO
+#16,AFC_Champions_League

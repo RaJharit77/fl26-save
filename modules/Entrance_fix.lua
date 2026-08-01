@@ -27,13 +27,13 @@ function make_key(ctx, filename)
 	   end
     else
 --Common matches
-    if ctx.stadium == 1 then
+       if ctx.stadium == 1 then
 		   if ctx.tournament_id == 2 or ctx.tournament_id == 1026 or ctx.tournament_id == 2050 or ctx.tournament_id == 3074 or ctx.tournament_id == 4098 or ctx.tournament_id == 5122 or ctx.tournament_id == 6146 or ctx.tournament_id == 7170 or ctx.tournament_id == 8194 or ctx.tournament_id == 3 or ctx.tournament_id == 1027  or ctx.tournament_id == 2051 or ctx.tournament_id == 3075 or ctx.tournament_id == 4099 or ctx.tournament_id == 5123 or ctx.tournament_id == 6147 or ctx.tournament_id == 7171 or ctx.tournament_id == 8195 or ctx.tournament_id == 4 or ctx.tournament_id == 5 or ctx.tournament_id == 1029 or ctx.tournament_id == 2053 or ctx.tournament_id == 3077 or ctx.tournament_id == 4101 or ctx.tournament_id == 5125 or ctx.tournament_id == 6149 or ctx.tournament_id == 7173 or ctx.tournament_id == 8197 or ctx.tournament_id == 9221 or ctx.tournament_id == 10245 or ctx.tournament_id == 11269 or ctx.tournament_id == 12293 or ctx.tournament_id == 6 then
 			   Entrance_fix = "Common\\st001\\UCL, UEL"
 		   else
 			   Entrance_fix = "Common\\st001"
 		   end
-       elseif ctx.stadium == 2 then
+       elseif ctx.stadium == 2 and ctx.home_team == 108 then
          Entrance_fix = "Common\\st002"
        elseif ctx.stadium == 5 then
          Entrance_fix = "Common\\st005"
@@ -41,9 +41,9 @@ function make_key(ctx, filename)
          Entrance_fix = "Common\\st006"
        elseif ctx.stadium == 7 then
 		   if ctx.tournament_id == 2 or ctx.tournament_id == 1026 or ctx.tournament_id == 2050 or ctx.tournament_id == 3074 or ctx.tournament_id == 4098 or ctx.tournament_id == 5122 or ctx.tournament_id == 6146 or ctx.tournament_id == 7170 or ctx.tournament_id == 8194 or ctx.tournament_id == 3 or ctx.tournament_id == 1027  or ctx.tournament_id == 2051 or ctx.tournament_id == 3075 or ctx.tournament_id == 4099 or ctx.tournament_id == 5123 or ctx.tournament_id == 6147 or ctx.tournament_id == 7171 or ctx.tournament_id == 8195 or ctx.tournament_id == 4 or ctx.tournament_id == 5 or ctx.tournament_id == 1029 or ctx.tournament_id == 2053 or ctx.tournament_id == 3077 or ctx.tournament_id == 4101 or ctx.tournament_id == 5125 or ctx.tournament_id == 6149 or ctx.tournament_id == 7173 or ctx.tournament_id == 8197 or ctx.tournament_id == 9221 or ctx.tournament_id == 10245 or ctx.tournament_id == 11269 or ctx.tournament_id == 12293 or ctx.tournament_id == 6 then
-			   Entrance_fix = "Common\\st009\\UCL, UEL"
+			   Entrance_fix = "Common\\st007\\UCL, UEL"
 		   else
-			   Entrance_fix = "Common\\st009"
+			   Entrance_fix = "Common\\st007"
 		   end
        elseif ctx.stadium == 10 then
          Entrance_fix = "Common\\st010"
@@ -60,7 +60,7 @@ function make_key(ctx, filename)
        elseif ctx.stadium == 23 then
          Entrance_fix = "Common\\st023"
        elseif ctx.stadium == 27 then
-          Entrance_fix = "Common\\st074"
+         Entrance_fix = "Common\\st027"
        elseif ctx.stadium == 28 then
          Entrance_fix = "Common\\st028"
        elseif ctx.stadium == 30 then
